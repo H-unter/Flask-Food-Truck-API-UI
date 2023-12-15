@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='foodstyle.css')}}">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="banner">
+        </div>
+        <div class="logo">
+        </div>
+        <div class="govt-logo">
+        </div>
+
+
+        <div class="navigation">
+            <div><b>_</b></div>
+            <div><b></b></div>
+            <div><b></b></div>
+            <div><b></b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+        </div>
+        <div class="background">
+        </div>
+        <div class="login">
+            <button class="dropbtn"><a href="/info">
+                <b>Info</b>
+            </a>
+            <button class="dropbtn"><a href="/">
+                <b>Home</b>
+            </a>
+            <button class="dropbtn"><a href="/awards">
+                <b>Awards</b>
+            </a>
+            <button class="dropbtn"><a href="/login">
+                {%if login_status == "true"%}
+                
+                <b>Logged in!</b>
+                {%else%}
+                <b>Login</b>
+                
+                {%endif%}
+            </a>
+            </button>
+        </div>
+        <div class="content">
+            <br>
+
+            <div class="dropdown">
+                <b><h1>AWARD ELIGIBLE FOOD TRUCKS</h1></b>
+            </div>
+            <h1>{{cat1[0][2]}}</h1>
+            <br> {%for item in cat1%}
+            <div class="food-trucks-content">
+                <div class="food-truck-banners">
+                    <a href="/trucks/{{item[0]}}"><img src={{item[7]}}></a>
+                </div>
+                <div class="food-truck-avatars-back">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+                </div>
+                <div class="food-truck-avatars">
+                    <img src={{item[4]}}>
+                </div>
+
+
+                <div class="food-truck-names">
+                    <a href="/trucks/{{item[0]}}"><b>{{item[1]}}</b></a>
+                </div>
+
+                <div class="food-truck-stripe">
+                </div>
+
+            </div>
+
+            {%endfor%}
+            <h1>{{cat2[0][2]}}</h1>{%for item in cat2%}
+            <div class="food-trucks-content">
+                <div class="food-truck-banners">
+                    <a href="/trucks/{{item[0]}}"><img src={{item[7]}}></a>
+                </div>
+                <div class="food-truck-avatars-back">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+                </div>
+                <div class="food-truck-avatars">
+                    <img src={{item[4]}}>
+                </div>
+                <div class="food-truck-names">
+                    <a href="/trucks/{{item[0]}}"><b>{{item[1]}}</b></a>
+                </div>
+                <div class="food-truck-stripe">
+                </div>
+            </div>
+            {%endfor%}
+            <h1>{{cat3[0][2]}}</h1>{%for item in cat3%}
+            <div class="food-trucks-content">
+                <div class="food-truck-banners">
+                    <a href="/trucks/{{item[0]}}"><img src={{item[7]}}></a>
+                </div>
+                <div class="food-truck-avatars-back">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+                </div>
+                <div class="food-truck-avatars">
+                    <img src={{item[4]}}>
+                </div>
+                <div class="food-truck-names">
+                    <a href="/trucks/{{item[0]}}"><b>{{item[1]}}</b></a>
+                </div>
+                <div class="food-truck-stripe">
+                </div>
+            </div>
+            {%endfor%}
+            <h1>{{cat4[0][2]}}</h1>{%for item in cat4%}
+            <div class="food-trucks-content">
+                <div class="food-truck-banners">
+                    <a href="/trucks/{{item[0]}}"><img src={{item[7]}}></a>
+                </div>
+                <div class="food-truck-avatars-back">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+                </div>
+                <div class="food-truck-avatars">
+                    <img src={{item[4]}}>
+                </div>
+                <div class="food-truck-names">
+                    <a href="/trucks/{{item[0]}}"><b>{{item[1]}}</b></a>
+                </div>
+                <div class="food-truck-stripe">
+                </div>
+            </div>
+            {%endfor%}
+            <h1>{{cat5[0][2]}}</h1>{%for item in cat5%}
+            <div class="food-trucks-content">
+                <div class="food-truck-banners">
+                    <a href="/trucks/{{item[0]}}"><img src={{item[7]}}></a>
+                </div>
+                <div class="food-truck-avatars-back">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+                </div>
+                <div class="food-truck-avatars">
+                    <img src={{item[4]}}>
+                </div>
+                <div class="food-truck-names">
+                    <a href="/trucks/{{item[0]}}"><b>{{item[1]}}</b></a>
+                </div>
+                <div class="food-truck-stripe">
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='foodstyle.css')}}">
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="banner">
+        </div>
+
+        <div class="logo">
+        </div>
+
+
+        <div class="govt-logo">
+        </div>
+
+        <div class="navigation">
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+
+        </div>
+        <div class="background">
+        </div>
+
+
+        <div class="content">
+
+            <div class="truckpage-text">
+                {%for column in database%}
+
+
+                <div class="truckpage-bio">
+                    <p>{{column[3]}}</p>
+                </div>
+
+                {%endfor%}
+                <div class="truckpage-review-entry"><br>
+                    <h1><b>Leave a Review!</b></h1>
+
+                    <form action="/trucks/{{tid}}/review_submit" method="post">
+                        {%if login_status != "true"%}
+                        <p>You are not logged in, you can do so <a href="/login">HERE</a></p><br><br><br> {%else%}
+
+
+
+
+                        <p>submit review</p>
+
+                        <div class='radio'>
+                            <b><p>speed of service</p></b>
+                            <input class="star star-5" id="star-1" type="radio" name="radio1" value=1 />
+                            <label class="star star-5" for="star-1"></label>
+                            <input class="star star-4" id="star-2" type="radio" name="radio1" value=0/>
+                            <label class="star star-4" for="star-2"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="radio1" value=-1 />
+                            <label class="star star-3" for="star-3"></label>
+                            <br>
+
+                            <b><p>quality and taste</p></b>
+                            <input class="star star-5" id="star-4" type="radio" name="radio2" value=1 />
+                            <label class="star star-5" for="star-4"></label>
+                            <input class="star star-4" id="star-5" type="radio" name="radio2" value=0 />
+                            <label class="star star-4" for="star-5"></label>
+                            <input class="star star-3" id="star-6" type="radio" name="radio2" value=-1 />
+                            <label class="star star-3" for="star-6"></label>
+
+
+                            <b><p>value for money</p></b>
+                            <input class="star star-5" id="star-7" type="radio" name="radio3" value=1/>
+                            <label class="star star-5" for="star-7"></label>
+
+                            <input class="star star-4" id="star-8" type="radio" name="radio3" value=0/>
+                            <label class="star star-4" for="star-8"></label>
+                            <input class="star star-3" id="star-9" type="radio" name="radio3" value=-1 />
+                            <label class="star star-3" for="star-9"></label>
+                            <br>
+                        </div>
+
+
+
+                        <p>Limit: 120 characters</p><br>
+                        <textarea name="comment" id="comment" rows="6" cols="90"></textarea><br>
+                        <input type="submit" value="Submit"> {%endif%}
+
+                    </form>
+
+                </div>
+
+                <h1><b>User Reviews</b></h1>
+                {%for row in review%}
+
+                <div class="truckpage-review">
+                    <ul>
+                        <p>
+                            {{row[2]}}:<br> Speed of service: {{row[3]}}<br> Quality and taste: {{row[4]}}<br> Value for money: {{row[5]}}<br> {{row[6]}}
+                        </p>
+                    </ul>
+                </div>
+
+                {%endfor%}
+
+            </div>
+        </div>
+        {%for column in database%}
+
+        <div class="truckpage-banner">
+            <img src={{column[7]}}>
+        </div>
+        <div class="truckpage-avatar-back">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC">
+        </div>
+        <div class="truckpage-avatar">
+            <img src={{column[4]}}>
+        </div>
+
+        <div class="truckpage-titlebar">
+            <div class="truckpage-name">
+                <b>{{column[1]}}</b>
+            </div>
+
+            <div class="truckpage-category">
+                <b>{{column[2]}}</b>
+            </div>
+
+
+            <div class="truckpage-website">
+                <a href="{{column[10]}}">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Website-Outline-512.png" width="25" height="25">
+                </a>
+            </div>
+            <div class="truckpage-facebook">
+                <a href="{{column[11]}}">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Facebook_svg-512.png" width="25" height="25">
+                </a>
+            </div>
+            <div class="truckpage-instagram">
+                <a href="{{column[12]}}">
+                    <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/38-instagram-512.png" width="25" height="25">
+                </a>
+            </div>
+            <div class="truckpage-twitter">
+                <a href="{{column[13]}}">
+                    <img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/43-twitter-512.png" width="25" height="25">
+                </a>
+            </div>
+        </div>
+
+        {%endfor%}
+
+
+
+
+
+
+
+
+        </b>
+    </div>
+
+</body>
+
+</html>

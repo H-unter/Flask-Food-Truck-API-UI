@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='foodstyle.css')}}">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="banner">
+        </div>
+        <div class="logo">
+        </div>
+        <div class="govt-logo">
+        </div>
+
+
+        <div class="navigation">
+            <div><b>_</b></div>
+            <div><b></b></div>
+            <div><b></b></div>
+            <div><b></b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+            <div><b>_</b></div>
+        </div>
+        <div class="background">
+        </div>
+
+
+        <div class="login">
+            <button class="dropbtn"><a href="/info">
+                <b>Info</b>
+            </a>
+            <button class="dropbtn"><a href="/">
+                <b>Home</b>
+            </a>
+            <button class="dropbtn"><a href="/awards">
+                <b>Awards</b>
+            </a>
+            <button class="dropbtn"><a href="/login">
+                {%if login_status == "true"%}
+                
+                <b>Logged in!</b>
+                {%else%}
+                <b>Login</b>
+                
+                {%endif%}
+            </a>
+            </button>
+
+        </div>
+        <div class="content"><br>
+            <div class="info">
+                <h1>Brisbane City Council Food Trucks</h1>
+                <p>This year at the Lord Mayor's Business Awards, a new category of award has been added to recognise the contribution of mobile food trucks to Brisbane’s economy. Brisbane City Council recognises that mobile food trucks activate city spaces
+                    and help celebrate Brisbane’s climate and cultural diversity (Brisbane City Council 2018) Criteria and terms for entry 1- Be registered in the official BCC food truck database - see the api here 2- The awards are only recognising food
+                    trucks that have a minimum of three (3) competing food trucks in their respective categories. These categories have then limited to the most popular 5 categories. The Awards page shows all eligible trucks for this award.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
